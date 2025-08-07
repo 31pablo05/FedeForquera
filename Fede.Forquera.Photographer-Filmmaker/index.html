@@ -1,7 +1,75 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <!-- Establece el conjunt    <!-- Meta tags para motores de búsqueda -->
+    <!-- Establece el conjunto de caracteres a UTF-8 para soportar caracteres especiales -->
+    <meta charset="UTF-8" />
+
+    <!-- Meta etiqueta viewport para asegurar que la página sea responsive en dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO: Título optimizado para búsquedas locales y específicas -->
+    <title>Federico Forquera - Fotógrafo Profesional y Filmmaker en Buenos Aires | Portfolio</title>
+
+    <!-- Descripción optimizada con palabras clave long-tail y llamada a la acción -->
+    <meta name="description" content="Federico Forquera - Fotógrafo profesional y filmmaker en Buenos Aires. Especialista en fotografía de eventos, deportiva, comercial y producciones audiovisuales. +5 años de experiencia. ¡Contacta ahora!" />
+
+    <!-- Palabras clave estratégicas y long-tail keywords -->
+    <meta name="keywords" content="fotógrafo profesional Buenos Aires, filmmaker Argentina, fotografía eventos Buenos Aires, fotografía deportiva, producción audiovisual, fotógrafo comercial, Federico Forquera, Fede Forquera, sesiones fotográficas, video profesional, contenido digital, fotografía corporativa, cobertura eventos" />
+
+    <!-- Meta información para redes sociales (Open Graph optimizado) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Federico Forquera - Fotógrafo Profesional y Filmmaker en Buenos Aires" />
+    <meta property="og:description" content="Fotógrafo profesional con +5 años de experiencia en Buenos Aires. Especialista en eventos, deportes y producciones comerciales. Portfolio completo disponible." />
+    <meta property="og:image" content="/assets/logo/logo-color-curvas.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://fede-forquera-photographer-filmmake.vercel.app/" />
+    <meta property="og:site_name" content="Federico Forquera Photography" />
+    <meta property="og:locale" content="es_AR" />
+    
+    <!-- Twitter Cards optimizado -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@fede_forquera" />
+    <meta name="twitter:title" content="Federico Forquera - Fotógrafo Profesional Buenos Aires" />
+    <meta name="twitter:description" content="Fotógrafo y filmmaker profesional en Buenos Aires. Especialista en eventos, deportes y contenido comercial." />
+    <meta name="twitter:image" content="/assets/logo/logo-color-curvas.webp" />
+    <meta name="twitter:creator" content="@fede_forquera" />
+
+    <!-- Meta tags adicionales para SEO -->
+    <meta name="author" content="Federico Forquera" />
+    <meta name="geo.region" content="AR-C" />
+    <meta name="geo.placename" content="Buenos Aires" />
+    <meta name="geo.position" content="-34.6037;-58.3816" />
+    <meta name="ICBM" content="-34.6037, -58.3816" />
+    <meta name="language" content="Spanish" />
+    <meta name="distribution" content="global" />
+    <meta name="rating" content="general" />
+
+    <!-- Favicon optimizado con múltiples tamaños -->
+    <link rel="icon" type="image/webp" href="/assets/logo/logo-color-curvas.webp" />
+    <link rel="shortcut icon" type="image/webp" href="/assets/logo/logo-color-curvas.webp" />
+    <link rel="apple-touch-icon" href="/assets/logo/logo-color-curvas.webp" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/logo/logo-color-curvas.webp" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/logo/logo-color-curvas.webp" />
+    <link rel="apple-touch-icon" sizes="167x167" href="/assets/logo/logo-color-curvas.webp" />
+
+    <!-- Canonical URL para evitar contenido duplicado -->
+    <link rel="canonical" href="https://fede-forquera-photographer-filmmake.vercel.app/" />
+
+    <!-- Preconnect y DNS prefetch para optimizar rendimiento -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    
+    <!-- Fuentes optimizadas para Core Web Vitals -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" /></noscript>
+    
+    <!-- Script del componente React principal -->
+    <script type="module" src="/src/main.jsx" defer></script>
+
+    <!-- Meta tags para motores de búsqueda -->
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow" />
     <meta name="bingbot" content="index, follow" />
