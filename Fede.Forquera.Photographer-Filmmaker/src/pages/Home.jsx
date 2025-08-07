@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState, useCallback } from 'react';
+import React, { useEffect, useMemo, useState, useCallback, useRef } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Banner from '../components/Banner'; 
@@ -7,6 +7,8 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 function Home() {
   const [imageLoaded, setImageLoaded] = useState({});
   const [selectedImage, setSelectedImage] = useState(null);
+  const [videoPlaying, setVideoPlaying] = useState({});
+  const videoRefs = useRef([]);
 
   useEffect(() => {
     AOS.init({
@@ -29,6 +31,21 @@ function Home() {
 
   const closeLightbox = useCallback(() => {
     setSelectedImage(null);
+  }, []);
+
+  const handleVideoPlay = useCallback((index) => {
+    setVideoPlaying(prev => ({ ...prev, [index]: true }));
+  }, []);
+
+  const handleVideoPause = useCallback((index) => {
+    setVideoPlaying(prev => ({ ...prev, [index]: false }));
+  }, []);
+
+  const handleCustomPlay = useCallback((index) => {
+    if (videoRefs.current[index]) {
+      videoRefs.current[index].play();
+      setVideoPlaying(prev => ({ ...prev, [index]: true }));
+    }
   }, []);
 
   const videoSources = useMemo(
@@ -284,16 +301,33 @@ function Home() {
                   className="group relative overflow-hidden rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-500 bg-gray-900"
                 >
                   <video
+                    ref={(el) => (videoRefs.current[index] = el)}
                     src={videoSrc}
                     controls
                     preload="none"
                     loading="lazy"
                     className="w-full aspect-video object-cover rounded-xl transition-transform duration-300 group-hover:scale-[1.02]"
                     poster={`${videoSrc.replace('.mp4', '')}-poster.jpg`}
+                    onPlay={() => handleVideoPlay(index)}
+                    onPause={() => handleVideoPause(index)}
                   />
                   
-                  {/* Overlay de información */}
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {/* Play button overlay personalizado - solo visible cuando el video está pausado */}
+                  {!videoPlaying[index] && (
+                    <div 
+                      className="absolute inset-0 flex items-center justify-center opacity-100 hover:opacity-75 transition-opacity duration-300 z-20 cursor-pointer"
+                      onClick={() => handleCustomPlay(index)}
+                    >
+                      <div className="w-16 h-16 bg-[#379299]/90 rounded-full flex items-center justify-center backdrop-blur-sm shadow-2xl hover:bg-[#379299] transition-colors duration-200">
+                        <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z"/>
+                        </svg>
+                      </div>
+                    </div>
+                  )}
+                  
+                  {/* Overlay de información - posicionado debajo del botón de play */}
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
                     <h4 className="text-white font-bold text-lg mb-2">
                       Producción Audiovisual {index + 1}
                     </h4>
@@ -307,15 +341,6 @@ function Home() {
                       <span className="inline-block px-2 py-1 bg-gray-700 text-white text-xs rounded font-medium">
                         Profesional
                       </span>
-                    </div>
-                  </div>
-                  
-                  {/* Play button overlay */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                    <div className="w-16 h-16 bg-[#379299]/80 rounded-full flex items-center justify-center backdrop-blur-sm">
-                      <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z"/>
-                      </svg>
                     </div>
                   </div>
                 </div>
