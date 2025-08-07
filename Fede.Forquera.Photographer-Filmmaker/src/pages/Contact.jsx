@@ -1,9 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { sendEmail } from '../components/emailjs.jsx'; // Asegúrate que la ruta sea la correcta
 import { 
-    FaUser, FaEnvelope, FaCommentDots, FaWhatsapp, 
-    FaPaperPlane, FaCheckCircle, FaTimesCircle, FaPhone, FaMapMarkerAlt,
-    FaInstagram, FaLinkedin, FaFacebook
+    FaUser, 
+    FaEnvelope, 
+    FaCommentDots, 
+    FaWhatsapp, 
+    FaPaperPlane, 
+    FaCheckCircle, 
+    FaTimesCircle, 
+    FaPhone, 
+    FaMapMarkerAlt,
+    FaInstagram, 
+    FaLinkedin, 
+    FaFacebook
 } from 'react-icons/fa';
 import AOS from 'aos';
 import 'aos/dist/aos.css';

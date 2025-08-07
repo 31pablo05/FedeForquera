@@ -1,8 +1,9 @@
 import React, { useEffect, useMemo, useState, useCallback, useRef } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import Banner from '../components/Banner'; 
+import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import Banner from '../components/Banner';
 
 function Home() {
   const [imageLoaded, setImageLoaded] = useState({});
@@ -428,40 +429,159 @@ function Home() {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-20 bg-[#379299]">
-        <div className="container mx-auto px-6 text-center">
+      <section className="relative py-20 bg-gradient-to-br from-[#379299] via-[#2d7a7a] to-[#1f5a5a] overflow-hidden">
+        {/* Elementos decorativos de fondo */}
+        <div className="absolute inset-0 overflow-hidden">
+          {/* Círculos flotantes animados */}
+          <div className="absolute top-10 left-10 w-40 h-40 bg-white/5 rounded-full animate-pulse blur-xl"></div>
+          <div className="absolute top-40 right-20 w-32 h-32 bg-white/10 rounded-full animate-bounce delay-700 blur-lg"></div>
+          <div className="absolute bottom-20 left-1/4 w-24 h-24 bg-white/8 rounded-full animate-pulse delay-1000 blur-md"></div>
+          <div className="absolute bottom-32 right-1/3 w-36 h-36 bg-white/6 rounded-full animate-bounce delay-500 blur-xl"></div>
+          
+          {/* Formas geométricas flotantes */}
+          <div className="absolute top-20 right-1/4 w-12 h-12 bg-gradient-to-br from-white/20 to-white/5 transform rotate-45 animate-spin opacity-30" style={{animationDuration: '12s'}}></div>
+          <div className="absolute bottom-40 left-1/3 w-8 h-8 bg-gradient-to-br from-white/25 to-white/10 transform rotate-12 animate-ping opacity-40"></div>
+          
+          {/* Líneas decorativas */}
+          <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
+          <div className="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-transparent via-white/15 to-transparent"></div>
+        </div>
+
+        {/* Efecto de partículas flotantes */}
+        <div className="absolute inset-0 pointer-events-none">
+          {[...Array(12)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-2 h-2 bg-white/30 rounded-full animate-pulse"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 4}s`,
+                animationDuration: `${3 + Math.random() * 3}s`
+              }}
+            />
+          ))}
+        </div>
+
+        <div className="relative z-10 container mx-auto px-6 text-center">
+          {/* Badge de credibilidad */}
+          <div 
+            data-aos="fade-down"
+            className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-2 mb-8"
+          >
+            <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+            <span className="text-white/90 text-sm font-medium">Disponible para nuevos proyectos</span>
+          </div>
+
           <h3 
             data-aos="fade-up"
-            className="text-3xl md:text-4xl font-bold text-white mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
           >
-            ¿Listo para capturar tu próximo proyecto?
+            ¿Listo para capturar tu{' '}
+            <span className="relative inline-block">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-orange-300 to-yellow-400">
+                próximo proyecto?
+              </span>
+              {/* Efecto de brillo animado */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12 transform -translate-x-full animate-pulse" 
+                   style={{animationDelay: '2s', animationDuration: '3s', animationIterationCount: 'infinite'}}></div>
+            </span>
           </h3>
+
           <p 
             data-aos="fade-up" 
             data-aos-delay="200"
-            className="text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed font-light"
           >
-            Trabajemos juntos para crear contenido visual que destaque y conecte con tu audiencia. 
-            Experiencia comprobada con marcas líderes del mercado.
+            Trabajemos juntos para crear contenido visual que destaque y conecte con tu audiencia.{' '}
+            <span className="font-semibold text-yellow-300">Experiencia comprobada</span> con marcas líderes del mercado.
           </p>
+
+          {/* Estadísticas impresionantes */}
+          <div 
+            data-aos="fade-up"
+            data-aos-delay="300"
+            className="flex flex-wrap justify-center gap-8 mb-12"
+          >
+            {[
+              { number: "100+", label: "Proyectos Completados" },
+              { number: "50+", label: "Marcas Satisfechas" },
+              { number: "5★", label: "Calificación Promedio" }
+            ].map((stat, index) => (
+              <div
+                key={index}
+                className="group text-center"
+                data-aos="zoom-in"
+                data-aos-delay={400 + index * 100}
+              >
+                <div className="text-3xl md:text-4xl font-bold text-yellow-300 mb-2 group-hover:scale-110 transition-transform duration-300">
+                  {stat.number}
+                </div>
+                <div className="text-white/80 text-sm md:text-base font-medium">
+                  {stat.label}
+                </div>
+              </div>
+            ))}
+          </div>
+
           <div 
             data-aos="fade-up" 
-            data-aos-delay="400"
-            className="space-y-4 sm:space-y-0 sm:space-x-4 sm:flex sm:justify-center"
+            data-aos-delay="500"
+            className="space-y-6 sm:space-y-0 sm:space-x-6 sm:flex sm:justify-center sm:items-center"
           >
+            {/* Botón principal mejorado */}
             <a
               href="/Contact"
-              className="inline-block bg-white text-[#379299] font-bold py-4 px-8 rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
+              className="group relative inline-flex items-center gap-3 bg-white text-[#379299] font-bold py-5 px-10 rounded-full hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 shadow-2xl hover:shadow-3xl overflow-hidden"
             >
-              Contactar Ahora
+              {/* Efecto de brillo */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-200/20 to-transparent -skew-x-12 transform -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+              
+              <svg className="w-5 h-5 text-[#379299] group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+              </svg>
+              <span className="relative z-10 text-lg">Contactar Ahora</span>
+              
+              {/* Indicador de urgencia */}
+              <div className="absolute -top-2 -right-2 w-4 h-4 bg-red-500 rounded-full animate-ping"></div>
+              <div className="absolute -top-2 -right-2 w-4 h-4 bg-red-500 rounded-full"></div>
             </a>
+
+            {/* Botón secundario mejorado */}
             <a
               href="/Portfolio"
-              className="inline-block bg-transparent border-2 border-white text-white font-bold py-4 px-8 rounded-full hover:bg-white/10 transition-all duration-300 transform hover:scale-105"
+              className="group relative inline-flex items-center gap-3 bg-transparent border-2 border-white/80 text-white font-bold py-5 px-10 rounded-full hover:bg-white/10 hover:border-white transition-all duration-300 transform hover:scale-105 backdrop-blur-sm overflow-hidden"
             >
-              Ver Portfolio Completo
+              {/* Efecto de relleno animado */}
+              <div className="absolute inset-0 bg-white/5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+              
+              <svg className="w-5 h-5 text-white group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              </svg>
+              <span className="relative z-10 text-lg">Ver Portfolio</span>
             </a>
           </div>
+
+          {/* Mensaje de confianza */}
+          <p 
+            data-aos="fade-up"
+            data-aos-delay="600"
+            className="mt-8 text-white/70 text-sm max-w-md mx-auto"
+          >
+            <span className="inline-flex items-center gap-2">
+              <svg className="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              Respuesta garantizada en 24 horas
+            </span>
+          </p>
+        </div>
+
+        {/* Efecto de ondas en el borde inferior */}
+        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+          <svg className="relative block w-full h-12" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" className="fill-gray-50"></path>
+          </svg>
         </div>
       </section>
     </div>

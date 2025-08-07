@@ -9,7 +9,7 @@ import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
-import ScrollToTop from './components/ScrollToTop'; // Ajusta la ruta según corresponda
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
     return (
