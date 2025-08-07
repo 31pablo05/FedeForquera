@@ -44,9 +44,9 @@ function AboutMe() {
   ];
 
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <div className="bg-gray-50 min-h-screen overflow-x-hidden">
       {/* Hero Section con video de fondo */}
-      <section className="pt-24 md:pt-20 relative h-[60vh] md:h-[65vh] lg:h-[75vh] xl:h-[80vh] flex items-center justify-center overflow-hidden">
+      <section className="pt-20 sm:pt-24 md:pt-20 relative h-[60vh] sm:h-[65vh] md:h-[70vh] lg:h-[75vh] xl:h-[80vh] flex items-center justify-center overflow-hidden w-full">
         {/* Video de fondo */}
         <video
           autoPlay
@@ -63,22 +63,22 @@ function AboutMe() {
         <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-[#379299]/30 to-black/60"></div>
         
         {/* Contenido principal */}
-        <div className="relative z-10 container mx-auto px-6 text-center text-white mt-8 md:mt-0">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center text-white mt-4 sm:mt-8 md:mt-0 w-full">
           <div 
             data-aos="fade-up"
-            className="max-w-4xl mx-auto pt-4 md:pt-0"
+            className="max-w-4xl mx-auto pt-4 md:pt-0 w-full"
           >
-            <h1 className="text-4xl md:text-7xl font-bold mb-4 md:mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight break-words">
               Federico <span className="text-[#379299]">Forquera</span>
             </h1>
-            <p className="text-lg md:text-2xl font-light mb-6 md:mb-8 text-gray-200">
+            <p className="text-base sm:text-lg md:text-2xl font-light mb-4 sm:mb-6 md:mb-8 text-gray-200">
               Photographer & Filmmaker
             </p>
-            <div className="w-24 h-1 bg-[#379299] mx-auto mb-6 md:mb-8"></div>
+            <div className="w-24 h-1 bg-[#379299] mx-auto mb-4 sm:mb-6 md:mb-8"></div>
             <p 
               data-aos="fade-up" 
               data-aos-delay="300"
-              className="text-base md:text-xl leading-relaxed max-w-3xl mx-auto mb-8 md:mb-12"
+              className="text-sm sm:text-base md:text-xl leading-relaxed max-w-3xl mx-auto mb-6 sm:mb-8 md:mb-12 px-2"
             >
               Transformando momentos ordinarios en recuerdos extraordinarios a través del lente. 
               Especializado en capturar la esencia auténtica de cada historia.
@@ -86,17 +86,17 @@ function AboutMe() {
             <div 
               data-aos="fade-up" 
               data-aos-delay="600"
-              className="space-y-4 sm:space-y-0 sm:space-x-6 sm:flex sm:justify-center mb-12 md:mb-8"
+              className="space-y-4 sm:space-y-0 sm:space-x-4 lg:space-x-6 sm:flex sm:justify-center mb-8 sm:mb-12 md:mb-8 w-full"
             >
               <a
                 href="#experience"
-                className="inline-block bg-[#379299] hover:bg-[#2d7a7f] text-white font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
+                className="inline-block bg-[#379299] hover:bg-[#2d7a7f] text-white font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg text-sm sm:text-base"
               >
                 Conoce mi Historia
               </a>
               <a
                 href="/portfolio"
-                className="inline-block bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#379299] font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105"
+                className="inline-block bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#379299] font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
               >
                 Ver Trabajos
               </a>
@@ -104,13 +104,14 @@ function AboutMe() {
           </div>
         </div>
       </section>
+      
       {/* Sección de Logros */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
+      <section className="py-16 sm:py-20 bg-white overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 w-full">
+          <div className="text-center mb-12 sm:mb-16">
             <h2 
               data-aos="fade-up"
-              className="text-4xl md:text-5xl font-bold text-gray-800 mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4 sm:mb-6 px-2"
             >
               Experiencia que <span className="text-[#379299]">Respalda</span>
             </h2>
@@ -121,19 +122,19 @@ function AboutMe() {
             ></div>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 w-full">
             {achievements.map((achievement, index) => (
               <div
                 key={index}
                 data-aos="zoom-in"
                 data-aos-delay={index * 150}
-                className="text-center p-6 rounded-xl bg-gradient-to-br from-gray-50 to-white shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                className="text-center p-3 sm:p-4 lg:p-6 rounded-xl bg-gradient-to-br from-gray-50 to-white shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 w-full"
               >
-                <div className="text-4xl mb-4">{achievement.icon}</div>
-                <div className="text-3xl md:text-4xl font-bold text-[#379299] mb-2">
+                <div className="text-2xl sm:text-3xl lg:text-4xl mb-2 sm:mb-4">{achievement.icon}</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#379299] mb-1 sm:mb-2">
                   {achievement.number}
                 </div>
-                <p className="text-gray-600 font-medium text-sm md:text-base">
+                <p className="text-gray-600 font-medium text-xs sm:text-sm md:text-base leading-tight px-1">
                   {achievement.label}
                 </p>
               </div>
@@ -143,43 +144,41 @@ function AboutMe() {
       </section>
 
       {/* Mi Historia - Sección mejorada */}
-      <section id="experience" className="py-20 bg-gradient-to-br from-gray-100 to-gray-200">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-            <div data-aos="fade-right">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+      <section id="experience" className="py-16 sm:py-20 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center mb-12 sm:mb-16 w-full">
+            <div data-aos="fade-right" className="w-full">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4 sm:mb-6 px-2">
                 Mi <span className="text-[#379299]">Historia</span>
               </h2>
-              <div className="w-24 h-1 bg-[#379299] mb-8"></div>
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+              <div className="w-24 h-1 bg-[#379299] mb-6 sm:mb-8"></div>
+              <p className="text-base sm:text-lg text-gray-700 leading-relaxed mb-4 sm:mb-6 px-2">
                 Desde muy joven, descubrí que mi pasión era capturar momentos únicos que cuentan historias profundas. 
                 Lo que comenzó como un hobby se transformó en una carrera profesional dedicada a la excelencia visual.
               </p>
-              <p className="text-lg text-gray-700 leading-relaxed mb-8">
+              <p className="text-base sm:text-lg text-gray-700 leading-relaxed mb-6 sm:mb-8 px-2">
                 Especializado en fotografía de eventos, deportes y contenido comercial, he tenido el privilegio de 
                 trabajar con marcas reconocidas como McDonald's, eventos deportivos de primera división, y producciones 
                 audiovisuales de alto impacto.
               </p>
-              <div className="flex items-center space-x-4 mb-8">
+              <div className="flex flex-col sm:flex-row sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-6 sm:mb-8 px-2">
                 <div className="flex items-center space-x-2">
-                  <svg className="w-5 h-5 text-[#379299]" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-5 h-5 text-[#379299] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-gray-700 font-medium">Certificaciones Profesionales</span>
+                  <span className="text-gray-700 font-medium text-sm sm:text-base">Certificaciones Profesionales</span>
                 </div>
               </div>
-              <div className="flex items-center space-x-4">
-                <div className="flex items-center space-x-2">
-                  <svg className="w-5 h-5 text-[#379299]" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  <span className="text-gray-700 font-medium">Equipamiento Profesional</span>
-                </div>
+              <div className="flex items-center space-x-2 px-2">
+                <svg className="w-5 h-5 text-[#379299] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <span className="text-gray-700 font-medium text-sm sm:text-base">Equipamiento Profesional</span>
               </div>
             </div>
             
-            <div data-aos="fade-left" className="relative">
-              <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+            <div data-aos="fade-left" className="relative w-full">
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl w-full">
                 <img 
                   src="/assets/images/fede/fede7.webp" 
                   alt="Federico Forquera en acción profesional" 
@@ -189,15 +188,15 @@ function AboutMe() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
               </div>
               {/* Elemento decorativo */}
-              <div className="absolute -top-6 -right-6 w-24 h-24 bg-[#379299]/20 rounded-full blur-2xl"></div>
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-[#379299]/10 rounded-full blur-3xl"></div>
+              <div className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 w-16 h-16 sm:w-24 sm:h-24 bg-[#379299]/20 rounded-full blur-2xl"></div>
+              <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 w-20 h-20 sm:w-32 sm:h-32 bg-[#379299]/10 rounded-full blur-3xl"></div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Servicios Profesionales */}
-      <section className="py-20 bg-white">
+      <section className="py-16 sm:py-20 bg-white overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 
