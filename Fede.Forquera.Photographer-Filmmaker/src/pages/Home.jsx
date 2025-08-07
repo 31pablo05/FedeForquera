@@ -143,10 +143,26 @@ function Home() {
         </div>
       </section>
 
-      {/* Sección de Galería Mejorada - Sin video de fondo por rendimiento */}
-      <section className="gallery-section relative py-20 text-white overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-        {/* Reemplazamos el video de fondo por un gradiente para mejorar el rendimiento */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60"></div>
+      {/* Sección de Galería Mejorada - Video optimizado */}
+      <section className="gallery-section relative py-20 text-white overflow-hidden">
+        {/* Video de fondo optimizado - solo se carga cuando es necesario */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="none"
+          className="absolute top-0 left-0 w-full h-full object-cover z-0"
+          style={{ filter: 'brightness(0.4) contrast(1.1)' }}
+          poster="/assets/images/video-poster.jpg"
+        >
+          <source src="/assets/videos/fondoVideo.mp4" type="video/mp4" />
+          {/* Fallback para browsers que no soportan video */}
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
+        </video>
+        
+        {/* Fallback de gradiente si el video no carga */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 opacity-50"></div>
 
         <div className="relative z-10 container mx-auto px-6">
           {/* Galería de Fotos Profesional */}
