@@ -69,6 +69,7 @@ const Navbar = () => {
               height="48"
               loading="eager"
               decoding="async"
+              fetchpriority="high"
               style={{ 
                 maxWidth: '89px', 
                 height: 'auto',

@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <!-- Establece el conjunto de caracteres a UTF-8 para soportar caracteres especiales -->
+    <!-- Establece el conjunt    <!-- Meta tags para motores de búsqueda -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="bingbot" content="index, follow" />
+    
+    <!-- Google Search Console -->
+    <meta name="google-site-verification" content="U1ysgqRd4WU3hOxGoD0f4dB7SUqvarut6JZODQsb-1M" />
+    
+    <!-- Schema markup JSON-LD optimizado para fotógrafo profesional -->UTF-8 para soportar caracteres especiales -->
     <meta charset="UTF-8" />
 
     <!-- Meta etiqueta viewport para asegurar que la página sea responsive en dispositivos móviles -->
@@ -226,11 +234,8 @@
     <!-- El div con id "root" es el contenedor donde React renderiza tu aplicación -->
     <div id="root"></div>
     
-    <!-- Preload de recursos críticos que mejoran LCP -->
+    <!-- Preload SOLO de recursos críticos above-the-fold -->
+    <link rel="preload" as="image" href="/assets/logo/logo-color-curvas.webp" fetchpriority="high" />
     <link rel="preload" as="image" href="/assets/images/fede/fede10-recortado.webp" />
-    <link rel="preload" as="image" href="/assets/logo/logo-color-curvas.webp" />
-    <!-- Preload de las primeras imágenes del portfolio que aparecen above the fold -->
-    <link rel="preload" as="image" href="/assets/images/jardinJapones/jar1.webp" />
-    <link rel="preload" as="image" href="/assets/images/go7.webp" />
   </body>
 </html>
