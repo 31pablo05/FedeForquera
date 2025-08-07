@@ -153,7 +153,7 @@ function Home() {
           playsInline
           preload="none"
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
-          style={{ filter: 'brightness(0.4) contrast(1.1)' }}
+          style={{ filter: 'brightness(0.7) contrast(1.0)' }}
           poster="/assets/images/video-poster.jpg"
         >
           <source src="/assets/videos/fondoVideo.mp4" type="video/mp4" />
@@ -161,8 +161,8 @@ function Home() {
           <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
         </video>
         
-        {/* Fallback de gradiente si el video no carga */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 opacity-50"></div>
+        {/* Overlay ligero solo para mejor legibilidad del texto */}
+        <div className="absolute inset-0 bg-black/20"></div>
 
         <div className="relative z-10 container mx-auto px-6">
           {/* Galería de Fotos Profesional */}
