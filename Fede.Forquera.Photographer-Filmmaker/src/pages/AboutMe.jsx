@@ -296,7 +296,7 @@ function AboutMe() {
             >
               <div className="relative bg-gray-800">
                 <img 
-                  src="/assets/images/fede/fede11.webp" 
+                  src="/assets/images/fede/fede13.webp" 
                   alt="Capturando la naturaleza en su máxima expresión" 
                   loading="lazy"
                   className="w-full h-[500px] object-contain bg-gray-800"
@@ -320,7 +320,7 @@ function AboutMe() {
               </div>
               <div className="relative bg-gray-800">
                 <img 
-                  src="/assets/images/fede/fede13.webp" 
+                  src="/assets/images/fede/fede16.webp" 
                   alt="Fotografía urbana al atardecer" 
                   loading="lazy"
                   className="w-full h-[500px] object-contain bg-gray-800"
@@ -332,7 +332,7 @@ function AboutMe() {
               </div>
               <div className="relative bg-gray-800">
                 <img 
-                  src="/assets/images/fede/fede14.webp" 
+                  src="/assets/images/fede/fede5.webp" 
                   alt="Cobertura de eventos especiales" 
                   loading="lazy"
                   className="w-full h-[500px] object-contain bg-gray-800"
@@ -344,7 +344,7 @@ function AboutMe() {
               </div>
               <div className="relative bg-gray-800">
                 <img 
-                  src="/assets/images/fede/fede5.webp" 
+                  src="/assets/images/fede/fede7.webp" 
                   alt="Fotografía callejera espontánea" 
                   loading="lazy"
                   className="w-full h-[500px] object-contain bg-gray-800"
@@ -356,7 +356,7 @@ function AboutMe() {
               </div>
               <div className="relative bg-gray-800">
                 <img 
-                  src="/assets/images/fede/fede16.webp" 
+                  src="/assets/images/fede/fede14.webp" 
                   alt="Técnicas avanzadas de iluminación" 
                   loading="lazy"
                   className="w-full h-[500px] object-contain bg-gray-800"
