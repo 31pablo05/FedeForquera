@@ -226,8 +226,11 @@
     <!-- El div con id "root" es el contenedor donde React renderiza tu aplicación -->
     <div id="root"></div>
     
-    <!-- Preload solo de recursos críticos que se usan inmediatamente -->
-    <!-- <link rel="preload" as="video" href="/assets/videos/fondoVideo.mp4" /> -->
-    <!-- <link rel="preload" as="image" href="/assets/images/fede/fede7.webp" /> -->
+    <!-- Preload de recursos críticos que mejoran LCP -->
+    <link rel="preload" as="image" href="/assets/images/fede/fede10-recortado.webp" />
+    <link rel="preload" as="image" href="/assets/logo/logo-color-curvas.webp" />
+    <!-- Preload de las primeras imágenes del portfolio que aparecen above the fold -->
+    <link rel="preload" as="image" href="/assets/images/jardinJapones/jar1.webp" />
+    <link rel="preload" as="image" href="/assets/images/go7.webp" />
   </body>
 </html>

@@ -65,6 +65,15 @@ const Navbar = () => {
               src="/assets/logo/logo-color-curvas.webp"
               alt="Fede Forquera - Photographer & Filmmaker"
               className="h-12 w-auto drop-shadow-2xl transition-all duration-300 group-hover:drop-shadow-3xl"
+              width="89"
+              height="48"
+              loading="eager"
+              decoding="async"
+              style={{ 
+                maxWidth: '89px', 
+                height: 'auto',
+                objectFit: 'contain'
+              }}
             />
             {/* Glow effect */}
             <div className="absolute inset-0 bg-[#379299]/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>

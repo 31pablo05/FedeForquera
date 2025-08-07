@@ -207,10 +207,18 @@ function Home() {
                     src={photo.src}
                     alt={photo.alt}
                     loading="lazy"
+                    decoding="async"
+                    width="380"
+                    height="320"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 380px"
                     onLoad={() => handleImageLoad(index)}
                     className={`w-full h-80 object-cover transition-all duration-700 group-hover:scale-110 ${
                       imageLoaded[index] ? 'opacity-100' : 'opacity-0'
                     }`}
+                    style={{
+                      objectFit: 'cover',
+                      aspectRatio: '380/320'
+                    }}
                   />
                   
                   {/* Overlay con información */}

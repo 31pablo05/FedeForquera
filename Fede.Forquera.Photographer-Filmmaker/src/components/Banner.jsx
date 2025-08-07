@@ -10,7 +10,15 @@ function Banner() {
           src="/assets/images/fede/fede10-recortado.webp"
           alt="Fede Forquera - Photographer & Filmmaker"
           className="w-full h-full object-cover object-center md:object-top"
+          width="636"
+          height="823"
           loading="eager"
+          decoding="async"
+          sizes="100vw"
+          style={{
+            objectFit: 'cover',
+            objectPosition: 'center top'
+          }}
         />
         {/* Overlay profesional */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60"></div>
