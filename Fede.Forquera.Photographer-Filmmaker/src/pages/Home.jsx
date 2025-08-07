@@ -130,33 +130,110 @@ function Home() {
       {/* Banner mejorado */}
       <Banner />
 
-      {/* Hero Section Profesional */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
-        <div className="container mx-auto px-6 text-center">
+      {/* Hero Section Profesional con efectos modernos */}
+      <section className="relative py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100 overflow-hidden">
+        {/* Elementos decorativos de fondo */}
+        <div className="absolute inset-0 overflow-hidden">
+          {/* Círculos flotantes animados */}
+          <div className="absolute top-10 left-10 w-32 h-32 bg-[#379299]/10 rounded-full animate-pulse"></div>
+          <div className="absolute top-40 right-20 w-20 h-20 bg-[#379299]/15 rounded-full animate-bounce delay-700"></div>
+          <div className="absolute bottom-20 left-1/4 w-16 h-16 bg-[#379299]/20 rounded-full animate-pulse delay-1000"></div>
+          <div className="absolute bottom-32 right-1/3 w-24 h-24 bg-[#379299]/8 rounded-full animate-bounce delay-500"></div>
+          
+          {/* Formas geométricas flotantes */}
+          <div className="absolute top-20 right-1/4 w-8 h-8 bg-gradient-to-br from-[#379299] to-[#2d7a7a] transform rotate-45 animate-spin opacity-20" style={{animationDuration: '8s'}}></div>
+          <div className="absolute bottom-40 left-1/3 w-6 h-6 bg-gradient-to-br from-[#379299] to-[#2d7a7a] transform rotate-12 animate-ping opacity-30"></div>
+        </div>
+
+        <div className="relative z-10 container mx-auto px-6 text-center">
           <h2 
             data-aos="fade-up"
-            className="text-4xl md:text-5xl font-bold text-gray-800 mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-6 relative"
           >
-            Capturando <span className="text-[#379299]">momentos únicos</span>
+            Capturando{' '}
+            <span className="relative inline-block">
+              <span className="text-[#379299] relative z-10">momentos únicos</span>
+              {/* Subrayado animado */}
+              <div className="absolute bottom-0 left-0 w-full h-3 bg-gradient-to-r from-[#379299]/30 to-[#379299]/10 transform scale-x-0 animate-pulse" 
+                   style={{animationDelay: '1s', animationDuration: '2s', animationFillMode: 'forwards'}}></div>
+            </span>
           </h2>
+          
           <p 
             data-aos="fade-up" 
             data-aos-delay="200"
-            className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8"
+            className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8 font-light"
           >
             Fotógrafo y filmmaker profesional especializado en eventos corporativos, 
             retratos artísticos y contenido audiovisual de alta calidad para marcas reconocidas.
           </p>
+          
+          {/* Tarjetas de especialidades con hover effects mejorados */}
           <div 
             data-aos="fade-up" 
             data-aos-delay="400"
-            className="flex flex-wrap justify-center gap-4 text-sm text-gray-500"
+            className="flex flex-wrap justify-center gap-4 mb-8"
           >
-            <span className="bg-white px-4 py-2 rounded-full shadow">• Eventos Corporativos</span>
-            <span className="bg-white px-4 py-2 rounded-full shadow">• Fotografía Deportiva</span>
-            <span className="bg-white px-4 py-2 rounded-full shadow">• Contenido Comercial</span>
-            <span className="bg-white px-4 py-2 rounded-full shadow">• Producciones Audiovisuales</span>
+            {[
+              { text: "• Eventos Corporativos", icon: "🏢" },
+              { text: "• Fotografía Deportiva", icon: "⚽" },
+              { text: "• Contenido Comercial", icon: "📸" },
+              { text: "• Producciones Audiovisuales", icon: "🎬" }
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="group bg-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 cursor-default border border-gray-100 hover:border-[#379299]/30"
+                data-aos="zoom-in"
+                data-aos-delay={600 + index * 100}
+              >
+                <span className="text-gray-600 group-hover:text-[#379299] transition-colors duration-300 font-medium text-sm md:text-base flex items-center gap-2">
+                  <span className="text-lg group-hover:scale-110 transition-transform duration-300">{item.icon}</span>
+                  {item.text}
+                </span>
+              </div>
+            ))}
           </div>
+
+          {/* Botón Call-to-Action mejorado */}
+          <div 
+            data-aos="fade-up" 
+            data-aos-delay="800"
+            className="mt-8"
+          >
+            <a
+              href="/Portfolio"
+              className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-[#379299] to-[#2d7a7a] text-white font-bold py-4 px-8 rounded-full hover:from-[#2d7a7a] hover:to-[#1f5a5a] transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 shadow-lg hover:shadow-xl overflow-hidden"
+            >
+              {/* Efecto de brillo */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 transform -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+              
+              <span className="relative z-10">Ver Mi Trabajo</span>
+              <svg 
+                className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300 relative z-10" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        {/* Partículas flotantes adicionales */}
+        <div className="absolute inset-0 pointer-events-none">
+          {[...Array(6)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-1 h-1 bg-[#379299]/40 rounded-full animate-pulse"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 3}s`,
+                animationDuration: `${2 + Math.random() * 2}s`
+              }}
+            />
+          ))}
         </div>
       </section>
 
@@ -201,7 +278,7 @@ function Home() {
                 data-aos-delay="400"
                 className="text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed"
               >
-                Una selección curada de mis trabajos más destacados en diferentes categorías profesionales
+                Una selección de mis trabajos más destacados en diferentes categorías profesionales
               </p>
             </div>
             
@@ -373,13 +450,13 @@ function Home() {
             className="space-y-4 sm:space-y-0 sm:space-x-4 sm:flex sm:justify-center"
           >
             <a
-              href="/contact"
+              href="/Contact"
               className="inline-block bg-white text-[#379299] font-bold py-4 px-8 rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
               Contactar Ahora
             </a>
             <a
-              href="/portfolio"
+              href="/Portfolio"
               className="inline-block bg-transparent border-2 border-white text-white font-bold py-4 px-8 rounded-full hover:bg-white/10 transition-all duration-300 transform hover:scale-105"
             >
               Ver Portfolio Completo
