@@ -72,15 +72,16 @@ const Card2 = () => {
       {showImages && (
         <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-4 p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10">
           {images.map((src, index) => (
-            <div key={index} className="relative group/item overflow-hidden rounded-xl cursor-pointer">
+            <div key={index} className="relative group/item overflow-hidden rounded-xl cursor-pointer" onClick={() => openModal(src)}>
               <img 
                 src={src}
                 alt={`McDonald's - Imagen ${index + 1}`}
                 className="w-full h-32 object-cover transition-all duration-300 group-hover/item:scale-110"
-                onClick={() => openModal(src)}
+                draggable="false"
+                style={{ userSelect: 'none' }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <div className="bg-white/20 backdrop-blur-sm rounded-full p-3 transform scale-0 group-hover/item:scale-100 transition-transform duration-300">
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+                <div className="bg-white/20 backdrop-blur-sm rounded-full p-3 transform scale-0 group-hover/item:scale-100 transition-transform duration-300 animate-pulse">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
                   </svg>
@@ -94,10 +95,10 @@ const Card2 = () => {
       {/* Modal */}
       {selectedImage && (
         <div 
-          className="fixed inset-0 flex items-center justify-center bg-black/95 backdrop-blur-sm z-50 p-4"
+          className="fixed inset-0 flex items-center justify-center bg-black/95 backdrop-blur-sm z-50 p-4 transition-opacity duration-500 animate-fadein"
           onClick={closeModal}
         >
-          <div className="relative max-w-[95vw] max-h-[95vh]" onClick={(e) => e.stopPropagation()}>
+          <div className="relative max-w-[95vw] max-h-[95vh] animate-zoomIn" onClick={(e) => e.stopPropagation()}>
             {/* Close Button */}
             <button 
               onClick={closeModal}
@@ -107,14 +108,12 @@ const Card2 = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-            
             {/* Image */}
             <img 
               src={selectedImage} 
               alt="Imagen completa" 
-              className="max-h-[95vh] max-w-[95vw] object-contain rounded-xl shadow-2xl"
+              className="max-h-[95vh] max-w-[95vw] object-contain rounded-xl shadow-2xl transition-transform duration-500"
             />
-            
             {/* Image Info */}
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 rounded-b-xl">
               <p className="text-white text-lg font-medium">McDonald's Producción</p>
